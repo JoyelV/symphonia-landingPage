@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -229,4 +231,33 @@ section{
   .header-two { max-width: 700px; }
 }
 
+@media (min-width: 1280px) {
+  :root{
+    --cube-size: 150px;
+    --block-size: 35px;
+    --logo-top-desktop: var(--logo-top-desktop);
+  }
+
+  .logo{
+    top: var(--logo-top-desktop);
+    gap: 24px;
+  }
+
+  .header-one h1 { font-size: clamp(2.5rem, 2.6vw, 5rem); }
+  .header-two { max-width: 800px; }
+}
+
+/* keep lenis / scroll related rules */
+.lenis .lenis-smooth [data-lenis-prevent]{
+  overscroll-behavior: contain;
+}
+
+.lenis .lenis-stopped {
+   overflow: clip;
+}
+
+.lenis .lenis-smooth iframe{
+  pointer-events: none;
+}
+/* ...existing code... */
 
