@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Symphonia — Digital Media & 3D Interactive Experience",
     description:
       "An immersive 3D scroll experience powered by Next.js, GSAP, and Tailwind CSS.",
-    url: "https://your-deployment-domain.com",
+    url: "https://symphonia-landing-page.vercel.app/",
     siteName: "Symphonia",
     images: [
       {
@@ -28,12 +28,16 @@ export const metadata: Metadata = {
     title: "Symphonia — Digital Media & 3D Interactive Experience",
     description:
       "3D scroll experience built with Next.js, GSAP, Lenis, and Tailwind CSS.",
+    creator: "@JoyelVarghese95",
     images: ["/og-image.jpg"],
   },
 };
 
-
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>
@@ -45,7 +49,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "Symphonia",
-              url: "https://your-deployment-domain.com",
+              url: "https://symphonia-landing-page.vercel.app/",
               author: {
                 "@type": "Person",
                 name: "Joyel Varghese",
@@ -60,4 +64,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-
