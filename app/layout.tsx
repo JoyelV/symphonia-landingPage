@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   title: "Symphonia — Digital Media & 3D Interactive Experience",
   description:
     "Symphonia is a creative digital-first media experience built with Next.js, GSAP, and Tailwind. Explore stunning 3D cube animations and smooth scroll transitions.",
+    icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Symphonia — Digital Media & 3D Interactive Experience",
     description:
