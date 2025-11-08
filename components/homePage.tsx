@@ -167,7 +167,7 @@ export default function HomePage() {
             className="w-11/12 sm:w-3/4 md:w-3/5 lg:w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center origin-center text-[18px] sm:text-[22px] md:text-[30px] lg:text-[50px] sm:mt-5 lg:mt-0 font-serif"
             ref={headerPrimaryRef}
           >
-            <h1 className="leading-tight">The first media company crafted for the digital first generation</h1>
+            <h1 className="leading-tight">The First Media Company crafted For the Digital First generation</h1>
           </div>
 
           <div className="header-two mt-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-[60%] md:w-[45%] text-center opacity-0" ref={headerSecondaryRef}>
