@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  /* cube size default (desktop) */
+  --cube-size: 150px;
+  --block-size: 35px;
+  --logo-top-desktop: 30%;
+  --logo-top-tablet: 28%;
+  --logo-top-mobile: 24%;
+}
+
+/* ...existing code... */
+html , body {
+  height: 100vh;
+  width: 100%;
+   background: #000;
+}
+
+img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+section{
+  position: relative;
+  height: 100vh;
+ 
+}
+
+.sticky{
+  background-color: #331707;
+  color: #ffe9d9;
+}
+
+.about{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:center;
+  background: #ffe9d9;
+  color: #331707;
+ 
+}
+
+/* Logo and blocks use variables so they scale responsively */
+.logo{
+  position: absolute;
+  top: var(--logo-top-desktop);
+  left: 50%;
+  transform: translate(-50%,-50%);
+  display: flex;
+  gap:24px;
+  z-index: 2;
+}
+
+.col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.col:nth-child(2){
+  gap:26px;
+}
+
+/* block uses variable size so Tailwind/written blocks in components can remain */
+.block{
+  width: var(--block-size);
+  height: var(--block-size);
+  background: #ffe9d9;
+}
+
+/* cube sizing via variable; translateZ uses half the cube size */
+.cubes{
+   position: absolute;
+   top: 0;
+   left: 0;
+   height: 100vh;
+   width: 100%;
+   transform-style: preserve-3d;
+   perspective: 1000px;
+}
+
+.cube {
+  position: absolute;
+  width: var(--cube-size);
+  height: var(--cube-size);
+  transform-style: preserve-3d;
+  opacity: 0;
+}
+
+/* face size */
+.cube > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* use calc to keep translateZ = half of cube size */
+.front {
+  transform: translateZ(calc(var(--cube-size) / 2));
+}
+
+.back {
+  transform: rotateY(180deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.right {
+  transform: rotateY(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+.bottom {
+  transform: rotateX(-90deg) translateZ(calc(var(--cube-size) / 2));
+}
+
+/* default cube positions (percentages remain) */
+.cube-1 { top: 10%; left: 20%; transform: translate3d(-50%, -50%, -4000px) rotateX(45deg) rotateY(45deg) rotateZ(0deg); }
+.cube-2 { top: 30%; left: 40%; transform: translate3d(-50%, -50%, -4000px) rotateX(-45deg) rotateY(45deg) rotateZ(0deg); }
+.cube-3 { top: 50%; left: 60%; transform: translate3d(-50%, -50%, -4000px) rotateX(45deg) rotateY(-45deg) rotateZ(0deg); }
+.cube-4 { top: 70%; left: 20%; transform: translate3d(-50%, -50%, -4000px) rotateX(-45deg) rotateY(-45deg) rotateZ(0deg); }
+.cube-5 { top: 90%; left: 40%; transform: translate3d(-50%, -50%, -4000px) rotateX(45deg) rotateY(45deg) rotateZ(0deg); }
+.cube-6 { top: 10%; left: 80%; transform: translate3d(-50%, -50%, -4000px) rotateX(-45deg) rotateY(45deg) rotateZ(0deg); }
+
+/* headings/responsive helpers */
+.header-one h1{
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3.5vw, 4.5rem);
+  line-height: 1;
+  opacity: 1;
+}
+
+/* secondary header: positioned centrally, allow responsive width */
+.header-two {
+  width: 90%;
+  max-width: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  text-align: center;
+  opacity: 0;
+  /* no default blur value; JS controls filter */
+}
+
+/* Responsive adjustments:
+   - mobile (<= 767px)
+   - tablet (768px - 1023px)
+   - desktop (>= 1024px)
+*/
+@media (max-width: 420px) {
+  :root{
+    --cube-size: 90px;
+    --block-size: 28px;
+    --logo-top-desktop: var(--logo-top-mobile);
+  }
+
+  .logo{
+    top: var(--logo-top-mobile);
+    gap: 12px;
+  }
+
+  .cube {
+    width: var(--cube-size) !important;
+    height: var(--cube-size) !important;
+  }
+
+  .header-one h1 { font-size: clamp(1.25rem, 6vw, 2.25rem); }
+  .header-two { max-width: 320px; }
+}
+
+@media (min-width: 421px) and (max-width: 767px) {
+  :root{
+    --cube-size: 110px;
+    --block-size: 30px;
+    --logo-top-desktop: var(--logo-top-tablet);
+  }
+
+  .logo{
+    top: var(--logo-top-tablet);
+  }
+
+  .cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+  }
+
+  .header-one h1 { font-size: clamp(1.5rem, 5.5vw, 3rem); }
+  .header-two { max-width: 520px; }
+}
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  :root{
+    --cube-size: 120px;
+    --block-size: 33px;
+    --logo-top-desktop: var(--logo-top-tablet);
+  }
+
+  .logo{
+    top: var(--logo-top-tablet);
+  }
+
+  .cube {
+    width: var(--cube-size);
+    height: var(--cube-size);
+  }
+
+  .header-one h1 { font-size: clamp(2rem, 4.5vw, 4rem); }
+  .header-two { max-width: 700px; }
+}
+
+@media (min-width: 1280px) {
+  :root{
+    --cube-size: 150px;
+    --block-size: 35px;
+    --logo-top-desktop: var(--logo-top-desktop);
+  }
+
+  .logo{
+    top: var(--logo-top-desktop);
+    gap: 24px;
+  }
+
+  .header-one h1 { font-size: clamp(2.5rem, 2.6vw, 5rem); }
+  .header-two { max-width: 800px; }
+}
+
+/* keep lenis / scroll related rules */
+.lenis .lenis-smooth [data-lenis-prevent]{
+  overscroll-behavior: contain;
+}
+
+.lenis .lenis-stopped {
+   overflow: clip;
+}
+
+.lenis .lenis-smooth iframe{
+  pointer-events: none;
+}
+/* ...existing code... */
+
