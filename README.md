@@ -193,6 +193,10 @@ Example filenames:
 1-top.jpeg
 1-bottom.jpeg
 ```
+Design Screenshots: 
+<img width="1888" height="915" alt="image" src="https://github.com/user-attachments/assets/055510de-0dd2-41e5-9c26-ab4e00c8a15e" />
+<img width="1880" height="911" alt="image" src="https://github.com/user-attachments/assets/8b3da628-ae8d-4372-9e44-7c039e4db8a2" />
+<img width="1887" height="906" alt="image" src="https://github.com/user-attachments/assets/cdfe0b3f-78cf-4796-8ab4-a047cd19a395" />
 
 ---
 
