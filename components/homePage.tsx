@@ -163,18 +163,18 @@ export default function HomePage() {
         </div>
 
         <div>
-          <div
-            className="w-11/12 sm:w-3/4 md:w-3/5 lg:w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center origin-center text-[18px] sm:text-[22px] md:text-[30px] lg:text-[50px] sm:mt-5 lg:mt-0 font-serif"
-            ref={headerPrimaryRef}
-          >
-            <h1 className="leading-tight">The First Media Company crafted For the Digital First generation</h1>
-          </div>
+<div className="w-11/12 sm:w-3/4 md:w-3/5 lg:w-3/5 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center origin-center" ref={headerPrimaryRef}>
+  <h1>The First Media Company crafted For the <br></br>Digital First generation</h1>
+</div>
+
 
           <div className="header-two mt-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-11/12 sm:w-[60%] md:w-[45%] text-center opacity-0" ref={headerSecondaryRef}>
-            <h2 className="text-base sm:text-lg md:text-2xl font-bold mb-3">Where innovation meets precision.</h2>
-            <p className="text-sm sm:text-base md:text-lg leading-[1.45]">
-              Symphonia unites visionary thinkers, creative architects, and analytical experts, collaborating seamlessly to transform challenges into opportunities. Together, we deliver tailored solutions that drive impact and inspire growth.
-            </p>
+<h2 className="text-base sm:text-lg md:text-2xl font-bold mb-3 font-[Inter]">
+  Where innovation meets precision.
+</h2>
+<p className="text-sm sm:text-base md:text-lg leading-[1.45]">
+Symphonia unites visionary thinkers, creative architects, and analytical experts, collaborating seamlessly to transform challenges into opportunities. Together, we deliver tailored solutions that drive impact and inspire growth.</p>
+
           </div>
         </div>
       </section>
