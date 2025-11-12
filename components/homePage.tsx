@@ -172,7 +172,7 @@ export default function HomePage() {
 <h2 className="text-base sm:text-lg md:text-2xl font-bold mb-3 font-[Inter]">
   Where innovation meets precision.
 </h2>
-<p className="text-sm sm:text-base md:text-lg leading-[1.45]">
+<p className="text-sm sm:text-base md:text-lg leading-[1]">
 Symphonia unites visionary thinkers, creative architects, and analytical experts, collaborating seamlessly to transform challenges into opportunities. Together, we deliver tailored solutions that drive impact and inspire growth.</p>
 
           </div>
